@@ -4,7 +4,7 @@ defineOptions({
 });
 
 defineProps<{
-  item: WebsiteItem;
+  item: WebsiteItem; //类型为WebsiteItem，在index.d.ts中定义
 }>();
 </script>
 

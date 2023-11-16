@@ -9,7 +9,7 @@ import { TabPanelProps } from "./basic/Tabs/types";
 import WebsiteItem from "./basic/WebsiteItem.vue";
 import useMouseWheel from "@/hooks/useMouseWheel";
 import useTouch from "@/hooks/useTouch";
-
+import axios from "axios";
 type WebsiteConfig = WebsiteSort & { sites: WebsiteItem[] };
 
 defineOptions({
@@ -58,8 +58,19 @@ function onDrawerHandlerClick() {
 }
 
 function getWebsiteDrawerData() {
+  axios
+    .get("http://localhost:8080/api/website-items")
+    .then((response) => {
+      // 成功获取数据后，将数据赋值给组件的data属性
+      websiteItems.value = response.data;
+      console.log(websiteItems.value);
+    })
+    .catch((error) => {
+      console.error("Error fetching website items:", error);
+    });
+
   websiteSorts.value = GLOBAL_CONFIG.WEBSITE_SORTS;
-  websiteItems.value = GLOBAL_CONFIG.WEBSITE_ITEMS;
+  //websiteItems.value = GLOBAL_CONFIG.WEBSITE_ITEMS;
 }
 
 watch(

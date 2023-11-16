@@ -15,5 +15,8 @@ export default () => {
       },
     },
     envDir: "./",
+    server: {
+      port:8088,
+    },
   });
 };

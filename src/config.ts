@@ -50,7 +50,7 @@ const GLOBAL_CONFIG = {
   /**
    * 指定中心 LOGO 图片地址
    */
-  LOGO_URL: null,
+  LOGO_URL: "mLogo2.png",
   /**
    * 个人 Github 链接
    */
@@ -58,12 +58,13 @@ const GLOBAL_CONFIG = {
   /**
    * 背景图片地址
    */
-  BACKGROUND_IMG_URL: "https://api.dujin.org/bing/1920.php",
+  //BACKGROUND_IMG_URL: "https://api.dujin.org/bing/1920.php",
+  BACKGROUND_IMG_URL: "bg2.jpg",
   /**
    * ICP 备案号，留空不显示
    */
-  ICP: "京ICP证000001号",
-  ICP_URL: "https://beian.miit.gov.cn/",
+  ICP: "",
+  ICP_URL: "",
   FOOTER_INFO: true,
   /**
    * 网站欢迎标语
@@ -91,9 +92,9 @@ const GLOBAL_CONFIG = {
    * 网站 Title Keywords Description 的配置，用于 SEO
    */
   TKD: {
-    title: "My Blog Index",
-    keywords: "Blog, Index, Index Page",
-    description: "This is my personal blog index page.",
+    title: "mingli online system",
+    keywords: "mingli,online system",
+    description: "This is mingli online system index page.",
   },
 };
 

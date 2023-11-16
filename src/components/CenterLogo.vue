@@ -9,11 +9,13 @@ defineOptions({
   name: "CenterLogo",
 });
 
+//从父组件传递的属性
 defineProps<{
   drawerVisible: boolean;
   touchable: boolean;
 }>();
 
+// 发送事件backgroundLoaded
 const emit = defineEmits<{
   backgroundLoaded: [];
 }>();
@@ -52,6 +54,7 @@ function goToBlog() {
   window.location.href = GLOBAL_CONFIG.BLOG_URL;
 }
 
+// 随机名言
 function randomSlogan() {
   const slogans = GLOBAL_CONFIG.SLOGANS;
   slogan.value = slogans[randomNum(0, slogans.length - 1)];
@@ -115,14 +118,14 @@ onMounted(() => {
   .inner {
     position: relative;
     .main-logo {
-      height: 7rem;
+      height: 20rem;
       position: absolute;
       transform: translate(-50%, -50%);
       transition: all 1s;
       top: 0;
     }
     .main-logo-top {
-      top: -3.2rem;
+      top: -5rem;
     }
     .hello {
       color: #ffffff;
