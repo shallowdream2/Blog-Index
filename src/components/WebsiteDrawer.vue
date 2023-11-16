@@ -63,13 +63,23 @@ function getWebsiteDrawerData() {
     .then((response) => {
       // 成功获取数据后，将数据赋值给组件的data属性
       websiteItems.value = response.data;
-      console.log(websiteItems.value);
+      //console.log(websiteItems.value);
     })
     .catch((error) => {
       console.error("Error fetching website items:", error);
     });
 
-  websiteSorts.value = GLOBAL_CONFIG.WEBSITE_SORTS;
+  axios
+    .get("http://localhost:8080/api/website-sorts")
+    .then((response) => {
+      websiteSorts.value = response.data;
+      //console.log(websiteSorts.value);
+      activeTabs.value = websiteSorts.value[0].id;
+    })
+    .catch((error) => {
+      console.error("Error fetching website sorts:", error);
+    });
+  //websiteSorts.value = GLOBAL_CONFIG.WEBSITE_SORTS;
   //websiteItems.value = GLOBAL_CONFIG.WEBSITE_ITEMS;
 }
 
@@ -83,7 +93,6 @@ watch(
 
 onMounted(() => {
   getWebsiteDrawerData();
-  activeTabs.value = websiteSorts.value[0].id;
 });
 </script>
 

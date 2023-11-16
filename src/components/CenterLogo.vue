@@ -69,7 +69,7 @@ onMounted(() => {
 <template>
   <div
     :class="['logo-area', { 'is-blur': drawerVisible }]"
-    :style="{ background: `url(${$config.BACKGROUND_IMG_URL})` }"
+    :style="{ background: `url(${GLOBAL_CONFIG.BACKGROUND_IMG_URL})` }"
   >
     <div :class="['img-shadow', { 'img-shadow-show': bgLoaded }]"></div>
     <div class="inner" style="cursor: pointer" @click="goToBlog">
@@ -79,7 +79,9 @@ onMounted(() => {
       />
       <div :class="['hello', { hello_bottom: touchable }]">
         <div>{{ slogan }}</div>
-        <div class="hello_bottom_text">点击以访问 {{ $config.BLOG_NAME }}</div>
+        <div class="hello_bottom_text">
+          点击以访问 {{ GLOBAL_CONFIG.BLOG_NAME }}
+        </div>
       </div>
     </div>
   </div>
